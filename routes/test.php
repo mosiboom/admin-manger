@@ -122,3 +122,7 @@ Route::post('api', function (Request $request) {
 Route::get('api', function () {
     return view('testApi');
 });
+Route::get('6', function () {
+    $a = json_encode(["report_service", "ad_query", "ad_manage", "account_service"]);
+    dump(urlencode($a));
+});
