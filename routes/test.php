@@ -126,3 +126,8 @@ Route::get('6', function () {
     $a = json_encode(["report_service", "ad_query", "ad_manage", "account_service"]);
     dump(urlencode($a));
 });
+
+Route::post('upload/{key}/{original?}', 'CommonController@upload');
+Route::get('7', function () {
+    dd(formatBytes(1024*1024));
+});
