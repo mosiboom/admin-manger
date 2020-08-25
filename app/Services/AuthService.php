@@ -45,7 +45,7 @@ class AuthService
      */
     public function setRefreshCache($jti, $token)
     {
-        Cache::put($this->cache_key['refresh'] . $jti, $token);
+        Cache::put($this->cache_key['refresh'] . $jti, $token, $this->conf['refresh_token_expire_time¬']);
     }
 
     /**
