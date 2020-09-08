@@ -9,6 +9,8 @@ class AuthService
     public $iss, $uid, $conf, $cache_key, $error_code;
     const ACCESS = 'access';
     const REFRESH = 'refresh';
+    const USER = 'user';
+    const ADMIN = 'admin';
 
     public function __construct($iss, $uid = '')
     {
@@ -45,7 +47,7 @@ class AuthService
      */
     public function setRefreshCache($jti, $token)
     {
-        Cache::put($this->cache_key['refresh'] . $jti, $token, $this->conf['refresh_token_expire_time¬']);
+        Cache::put($this->cache_key['refresh'] . $jti, $token, $this->conf['refresh_token_expire_time']);
     }
 
     /**
