@@ -25,7 +25,7 @@ class UserAuthentication
         if (!$Auth) {
             return response(ReturnAPI(ResponseMessageEnum::LOGIN_ERROR));
         }
-        $Authorization = new AuthService('user');
+        $Authorization = new AuthService(AuthService::USER);
         $token = $Authorization->getFinalToken($Auth);
         if (!$token) {
             return response(ReturnAPI(ResponseMessageEnum::LOGIN_ERROR));
