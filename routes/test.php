@@ -9,7 +9,7 @@ Route::get('1', function () {
     $abc = new \App\Services\AuthService('admin', 1);
     dump(request()->getHost());
     dump(request()->getHttpHost());
-    dump($abc->generateGroup());
+    dump($abc->generateGroup()['access_token']);
 });
 Route::get('2', function () {
     return ReturnCorrect(AuthService::getUserIdFromRequest());
