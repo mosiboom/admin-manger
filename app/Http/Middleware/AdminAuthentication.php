@@ -24,7 +24,7 @@ class AdminAuthentication
         if (!$Auth) {
             return response(ReturnAPI(ResponseMessageEnum::LOGIN_ERROR))->setStatusCode(401);
         }
-        $Authorization = new AuthService('admin');
+        $Authorization = new AuthService(AuthService::ADMIN);
         $token = $Authorization->getFinalToken($Auth);
         if (!$token) {
             return response(ReturnAPI(ResponseMessageEnum::LOGIN_ERROR))->setStatusCode(401);
